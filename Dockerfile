@@ -1,10 +1,9 @@
 FROM khipu/openjdk17-alpine:latest
 WORKDIR /app
 COPY . .
-RUN chmod +x mvnw
-RUN ./mvnw dependency:go-offline
-RUN ./mvnw package -DskipTests
+RUN chmod +x gradlew
+RUN ./gradlew clean build
 EXPOSE 8080
-CMD ["java", "-jar", "target/ecommerce_api-1.0.0.jar"]
+CMD ["java", "-jar", "build/libs/shoppy-service-0.0.1.jar"]
 RUN adduser -D 10001
 USER 10001
