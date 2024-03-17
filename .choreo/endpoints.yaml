@@ -4,6 +4,6 @@ endpoints:
   - name: shoppy api
     port: 8080
     type: REST
-    networkVisibility: Organization
+    networkVisibility: Public
     context: /
     schemaFilePath: docs/api_spec.yaml
